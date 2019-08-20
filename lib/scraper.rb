@@ -5,10 +5,10 @@ require 'pry'
 class Scraper
 
   def self.scrape_index_page(index_url)
-    student_site = Nokogiri::HTML(open(index_url))
+    index_site = Nokogiri::HTML(open(index_url))
     students = []
 
-    student_site.css("div.student-card a").each do |student|
+    index_site.css("div.student-card a").each do |student|
 
       location = student.css("div p.student-location").text
       name = student.css("div h4.student-name").text
