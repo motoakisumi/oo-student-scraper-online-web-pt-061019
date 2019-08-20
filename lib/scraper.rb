@@ -25,10 +25,11 @@ class Scraper
 
     student_site.css("div.student-card a").each do |student|
 
-
-    url =student.css("a").attribute("href").value
-    info = {:profile_url => url}
-    students << info
+      url =student.css("a").attribute("href").value
+      info = {:profile_url => url}
+      students << info
+    end
+    students
   end
 
 
