@@ -25,7 +25,6 @@ class Scraper
     collection = []
     info = {}
     profile_site.css("div.social-icon-container a").each do |profile|
-
       profile.each do |social|
         if social.attribute("href").include?("twitter")
           info{:twitter => social.attribute("href").value}
@@ -36,6 +35,7 @@ class Scraper
         else
           info{:blog => social.attribute("href").value}
         end
+      end
 
       url =student.attribute("href").value
       info = {:profile_url => url}
