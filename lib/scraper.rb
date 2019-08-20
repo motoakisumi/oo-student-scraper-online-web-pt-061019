@@ -12,8 +12,9 @@ class Scraper
 
       location = student.css("div p.student-location").text
       name = student.css("div h4.student-name").text
+      url =student.css("a").attribute("href").value
 
-      info = {:location => location, :name => name}
+      info = {:location => location, :name => name, :profile_url => url}
       students << info
     end
     students
