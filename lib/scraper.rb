@@ -9,11 +9,13 @@ class Scraper
     students = []
 
     student_site.css("div.student-card").each do |student|
-      name = student.css("a div h4.student-name").text
+
       location = student.css("a div p.student-location").text
+      name = student.css("a div h4.student-name").text
       url =student.css("a").attribute("href").value
+
       info = {:location => location, :name => name,
-      profile_url => url}
+      :profile_url => url}
       students << info
     end
     students
