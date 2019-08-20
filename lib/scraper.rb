@@ -8,7 +8,7 @@ class Scraper
 
     student_site = Nokogiri::HTML(html)
     projects = {}
-      binding.pry
+  binding.pry
 
   end
 
