@@ -38,5 +38,5 @@ class Scraper
     quote = profile_site.css("div.vitals-text-container div.profile-quote").text
     info[:profile_quote] = quote
   end
-
+  info
 end
