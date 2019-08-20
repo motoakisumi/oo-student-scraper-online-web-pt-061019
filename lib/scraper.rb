@@ -13,10 +13,9 @@ class Scraper
     profile.each do |student|
       name = student.css("h4.student-name").text
       location = student.css("p.student-location").text
-      info = {:name => name, :location => location}
+      info = {:location => location, :name => name}
       students << info
     end
-    students
   end
 
   def self.scrape_profile_page(profile_url)
