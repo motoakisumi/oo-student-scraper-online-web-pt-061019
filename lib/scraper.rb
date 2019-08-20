@@ -7,8 +7,9 @@ class Scraper
     html = File.read('./fixtures/student-site/index.html')
 
     student_site = Nokogiri::HTML(html)
-    projects = {}
     binding.pry
+    projects = {}
+    
 
   end
 
