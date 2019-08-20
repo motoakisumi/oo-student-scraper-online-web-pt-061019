@@ -20,7 +20,7 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-    profile_site = Nokogiri::HTML(open(index_url))
+    profile_site = Nokogiri::HTML(open(profile_url))
 
     collection = []
     info = {}
@@ -36,12 +36,9 @@ class Scraper
           info{:blog => social.attribute("href").value}
         end
       end
+    info{:profile_quote => profile_site.css("div.vitals-text-container div.profile-quote").text}
 
-      url =student.attribute("href").value
-      info = {:profile_url => url}
-      students << info
-    end
-    students
+
   end
 
 end
