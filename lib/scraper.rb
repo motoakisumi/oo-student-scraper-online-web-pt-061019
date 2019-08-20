@@ -26,13 +26,13 @@ class Scraper
     profile_site.css("div.social-icon-container a").each do |profile|
       profile.each do |social|
         if social.attribute("href").value.include?("twitter")
-          info[:twitter] = social.attribute("href")
+          info[:twitter] = social.attribute("href").value
         elsif social.attribute("href").value.include?("linkedin")
-          info[:linkedin] = social.attribute("href")
+          info[:linkedin] = social.attribute("href").value
         elsif social.attribute("href").value.include?("github")
-          info[:github] = social.attribute("href")
+          info[:github] = social.attribute("href").value
         elsif social.attribute("href").value.end_with?("com/")
-          info[:blog] = social.attribute("href")
+          info[:blog] = social.attribute("href").value
         end
       end
     quote = profile_site.css("div.vitals-text-container div.profile-quote").text
