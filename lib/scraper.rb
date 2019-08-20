@@ -12,17 +12,20 @@ class Scraper
 
       location = student.css("div p.student-location").text
       name = student.css("div h4.student-name").text
-      url =student.css("a").attribute("href").value
 
-      info = {:location => location, :name => name,
-      :profile_url => url}
+      info = {:location => location, :name => name}
       students << info
     end
     students
   end
 
   def self.scrape_profile_page(profile_url)
+    student_site = Nokogiri::HTML(open(index_url))
+    students = []
 
+    url =student.css("a").attribute("href").value
+    info = {:profile_url => url}
+    students << info
   end
 
 
