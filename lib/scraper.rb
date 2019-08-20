@@ -27,17 +27,17 @@ class Scraper
     profile_site.css("div.social-icon-container a").each do |profile|
       profile.each do |social|
         if social.attribute("href").include?("twitter")
-          info[:twitter] => social.attribute("href").value
+          info[:twitter] = social.attribute("href").value
         elsif social.attribute("href").include?("linkedin")
-          info[:linkedin] => social.attribute("href").value
+          info[:linkedin] = social.attribute("href").value
         elsif social.attribute("href").include?("github")
-          info[:github] => social.attribute("href").value
+          info[:github] = social.attribute("href").value
         else
-          info[:blog] => social.attribute("href").value
+          info[:blog] = social.attribute("href").value
         end
       end
     quote = profile_site.css("div.vitals-text-container div.profile-quote").text
-    info[:profile_quote] => quote
+    info[:profile_quote] = quote
   end
 
 end
