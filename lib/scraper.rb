@@ -31,7 +31,7 @@ class Scraper
           info[:linkedin] = social.attribute("href")
         elsif social.attribute("href").include?("github")
           info[:github] = social.attribute("href")
-        else
+        elsif social.attribute("href")..end_with?("com/")
           info[:blog] = social.attribute("href")
         end
       end
