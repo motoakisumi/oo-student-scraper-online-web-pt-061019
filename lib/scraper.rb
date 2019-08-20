@@ -11,8 +11,8 @@ class Scraper
     profile = student_site.css("div.student-card")
 
     profile.each do |student|
-      name = student.css("student-name").text
-      location = student.css("student-location").text
+      name = student.css(".student-name").text
+      location = student.css(".student-location").text
       info = {:location => location, :name => name}
       students << info
     end
