@@ -37,8 +37,6 @@ class Scraper
         end
       end
     info{:profile_quote => profile_site.css("div.vitals-text-container div.profile-quote").text}
-
-
   end
 
 end
