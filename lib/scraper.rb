@@ -22,7 +22,6 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     profile_site = Nokogiri::HTML(open(profile_url))
 
-    collection = []
     info = {}
     profile_site.css("div.social-icon-container a").each do |profile|
       profile.each do |social|
