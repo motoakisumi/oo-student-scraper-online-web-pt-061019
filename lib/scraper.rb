@@ -36,7 +36,8 @@ class Scraper
           info{:blog => social.attribute("href").value}
         end
       end
-    info{:profile_quote => profile_site.css("div.vitals-text-container div.profile-quote").text}
+    quote = profile_site.css("div.vitals-text-container div.profile-quote").text
+    info{:profile_quote => }
   end
 
 end
