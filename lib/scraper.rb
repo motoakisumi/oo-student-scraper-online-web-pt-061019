@@ -5,12 +5,10 @@ class Scraper
 
   def self.scrape_index_page(index_url)
     html = File.read('./fixtures/student-site/index.html')
-
-    student_site = Nokogiri::HTML(html)
     binding.pry
-    projects = {}
-    boo = true
+    student_site = Nokogiri::HTML(html)
 
+    projects = {}
 
   end
 
