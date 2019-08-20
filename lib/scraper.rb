@@ -20,9 +20,8 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-    html = open(profile_url)
-    doc = Nokogiri::HTML(html)
-    return_hash = {}
+    doc = Nokogiri::HTML(open(profile_url))
+    info = {}
 
       social = doc.css(".vitals-container .social-icon-container a")
       social.each do |element| #iterate through each of the social elements and assign the keys if the item exists
